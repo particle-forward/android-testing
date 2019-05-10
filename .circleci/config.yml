@@ -10,10 +10,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+          key: jars-{{ checksum "../unit/BasicSample/build.gradle" }}-{{ checksum  "../unit/BasicSample/app/build.gradle" }}
       - run:
           name: Download Dependencies
-          command: ./gradlew test
+          command: ./unit/BasicSample/gradlew test
       # - save_cache:
       #     key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       #     paths:
